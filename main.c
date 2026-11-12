@@ -1,11 +1,20 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void main(void){
-    int i = 300;
+void swap(int *x, int *y)
+{
+    int temp;
+    temp = *x;
+    *x = *y;
+    *y = temp;
+}
 
-    int *pi = &i;
-    char *pc = (char*)&i;
+int main(void)
+{
+    int a = 3;
+    int b = 5;
+    swap(&a, &b);
 
-    printf("%i, %i, %i\n", i, *pi, *pc);
+    printf("a : %i, b : %i\n",a,b);
+    return 0;
 }
